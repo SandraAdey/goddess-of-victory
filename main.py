@@ -15,7 +15,8 @@ pygame.display.set_caption("Brawler")
 bg_image = pygame.image.load("image/nikke.png").convert_alpha()
 
 def draw_bg():
-  screen.blit(bg_image, (0, 0))
+  scaled_bg = pygame.transform.scale(bg_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
+  screen.blit(scaled_bg, (0, 0))
 
 #game loop
 run = True
