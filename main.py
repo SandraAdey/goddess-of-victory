@@ -30,6 +30,10 @@ while run:
   #draw background
   draw_bg()
 
+  fighter_1.move()
+  fighter_2.move()
+
+
   #draw fighters
   fighter_1.draw(screen)
   fighter_2.draw(screen)
@@ -40,7 +44,7 @@ while run:
     if event.type == pygame.QUIT:
       run = False
 
-
+  
   pygame.display.update()     
 
 pygame.quit()
