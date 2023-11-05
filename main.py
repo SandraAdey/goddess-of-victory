@@ -12,6 +12,10 @@ SCREEN_HEIGHT = 600
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Brawler")
 
+#set framerate
+clock = pygame.time.Clock()
+FPS = 60
+
 #loading back ground image
 bg_image = pygame.image.load("image/nikke.png").convert_alpha()
 
@@ -26,13 +30,14 @@ fighter_2 = Fighter(700, 310)
 #game loop
 run = True
 while run:
+
+  clock.tick(FPS)
   
   #draw background
   draw_bg()
 
-  fighter_1.move()
-  fighter_2.move()
-
+  #move fighters
+  fighter_1.move(SCREEN_WIDTH, SCREEN_HEIGHT, screen)
 
   #draw fighters
   fighter_1.draw(screen)
